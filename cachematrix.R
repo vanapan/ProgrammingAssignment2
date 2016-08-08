@@ -22,7 +22,6 @@
 ## [2,] -0.3  0.1
 
 
-
 ## This function creates a special "matrix" object, which is really a list 
 ## containing a function to
 ## 1. set the value of the matrix
@@ -36,7 +35,6 @@ makeCacheMatrix <- function( m = matrix() ) {
        
        ## Initialization of the variable that holds the cached value
        ## NULL if nothing is cached 
-       
        i <- NULL
        
        ## Set the matrix
@@ -45,12 +43,10 @@ makeCacheMatrix <- function( m = matrix() ) {
               ## Assign the input matrix new_matrix to the variable m
               m <<- new_matrix
 
-              
               ## Since a new matrix has been assigned, re-initialize the
               ## cached value
               i <<- NULL
        }
-       
        
        ## Get the matrix
        get <- function() {
@@ -81,8 +77,6 @@ makeCacheMatrix <- function( m = matrix() ) {
 
 
 
-
-
 ## The following function calculates the inverse of a "special" matrix created with 
 ## makeCacheMatrix. It first checks if the inverse has already been computed.
 ## If so, it gets the result from the cache and skips the computation.
@@ -98,7 +92,6 @@ cacheSolve <- function(x, ...) {
        m <- x$getInverse()
        
        ## If a cached value exists return it
-       
        if( !is.null(m) ) {
               message("getting cached data")
               return(m)
